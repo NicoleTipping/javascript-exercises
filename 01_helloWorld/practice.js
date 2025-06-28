@@ -42,6 +42,7 @@ console.log(unique(["Hare", "Krishna", "Hare", "Krishna",
     "Krishna", "Krishna", "Hare", "Hare", ":-O"
 ]));
 
+// 6
 const repeatString = function (string, num) {
     if (num < 0) return "ERROR";
     let repeated = "";
@@ -52,6 +53,7 @@ const repeatString = function (string, num) {
 };
 console.log(repeatString("hey", 3));
 
+// 7
 const reverseString = function (string) {
     return string
         .split("")
@@ -60,11 +62,7 @@ const reverseString = function (string) {
 };
 console.log(reverseString("how You Doinn yooo"));
 
-const removeFromArray = function (array, ...arg) {
-    return array.filter((e) => !arg.includes(e));
-};
-console.log(removeFromArray([1, 2, "3", 4], "3", 1));
-
+// 9
 const sumAll = function (num1, num2) {
     if (num1 < 0 || num2 < 0) return "ERROR";
     if (!Number.isInteger(num1) || !Number.isInteger(num2)) return "ERROR";
@@ -85,6 +83,7 @@ const sumAll = function (num1, num2) {
 };
 console.log(sumAll(1, 4));
 
+// 10
 const leapYears = function (year) {
     if(year < 1000) return false;
     if (year % 4 === 0 && year % 100 !== 0) {
@@ -100,14 +99,19 @@ console.log(leapYears(1996));
 console.log(leapYears(700)); //false
 console.log(leapYears(1900)); //false
 
-
+// 11
 const convertToCelsius = function(temp) {
-
+  return parseFloat(((temp - 32) * (5/9)).toFixed(1));
 };
 console.log(convertToCelsius(100)); //37.8
 
-
 const convertToFahrenheit = function(temp) {
-    
+  return parseFloat((temp * (9/5) + 32).toFixed(1)); 
 };
 console.log(convertToFahrenheit(0)); //32
+
+// 8
+const removeFromArray = function (array, ...arg) {
+    return array.filter((e) => !arg.includes(e));
+};
+console.log(removeFromArray([1, 2, "3", 4], "3", 1));
