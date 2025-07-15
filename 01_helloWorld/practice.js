@@ -85,7 +85,7 @@ console.log(sumAll(1, 4));
 
 // 10
 const leapYears = function (year) {
-    if(year < 1000) return false;
+    if (year < 1000) return false;
     if (year % 4 === 0 && year % 100 !== 0) {
         return true;
     } else if (year % 4 === 0 && year % 100 === 0 && year % 400 === 0) {
@@ -100,13 +100,13 @@ console.log(leapYears(700)); //false
 console.log(leapYears(1900)); //false
 
 // 11
-const convertToCelsius = function(temp) {
-  return parseFloat(((temp - 32) * (5/9)).toFixed(1));
+const convertToCelsius = function (temp) {
+    return parseFloat(((temp - 32) * (5 / 9)).toFixed(1));
 };
 console.log(convertToCelsius(100)); //37.8
 
-const convertToFahrenheit = function(temp) {
-  return parseFloat((temp * (9/5) + 32).toFixed(1)); 
+const convertToFahrenheit = function (temp) {
+    return parseFloat((temp * (9 / 5) + 32).toFixed(1));
 };
 console.log(convertToFahrenheit(0)); //32
 
@@ -115,3 +115,31 @@ const removeFromArray = function (array, ...arg) {
     return array.filter((e) => !arg.includes(e));
 };
 console.log(removeFromArray([1, 2, "3", 4], "3", 1));
+
+// 12
+const factorial = function (num) {
+    let sum = 1;
+    for (let i = 1; i <= num; i++) {
+        sum = sum * i;
+    }
+    return sum;
+};
+console.log(factorial(4));
+
+// 13
+const palindromes = function (string) {
+    let str = string
+        .toLowerCase()
+        .replace(/[.," "\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+        .split("")
+        .join("");
+    let revStr = str
+        .split("")
+        .reverse()
+        .join("");
+    return str === revStr;
+};
+console.log(palindromes('racecar!')); //true
+console.log(palindromes('Racecar!')); //true
+console.log(palindromes('Animal loots foliated detail of stool lamina.')); //true
+console.log(palindromes('A car, a man, a maraca.')); //true
