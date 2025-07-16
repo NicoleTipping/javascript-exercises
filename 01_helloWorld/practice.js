@@ -144,46 +144,48 @@ console.log(palindromes('Racecar!')); //true
 console.log(palindromes('Animal loots foliated detail of stool lamina.')); //true
 console.log(palindromes('A car, a man, a maraca.')); //true
 
-// const fibonacci = function (num) {
-//     let fibArray = [];
-//     for (let i = 0; i < array.length; i++) {
-//         if (i == 0) {
-//             fibArray.push(i);
-//         } else if(i > 0) {
-
-//         }
-//     } 
-// };
-// console.log(fibonacci(4)); //3
-// console.log(fibonacci(15)); //610
-// console.log(fibonacci(0)); //0
-// console.log(fibonacci(-25)); //"OOPS"
-// console.log(fibonacci("4")); //4
 
 const people = [
-      {
+    {
         name: "Carly",
         yearOfBirth: 2018,
-      },
-      {
+    },
+    {
         name: "Ray",
         yearOfBirth: 1962,
         yearOfDeath: 2011,
-      },
-      {
+    },
+    {
         name: "Jane",
         yearOfBirth: 1912,
         yearOfDeath: 1941,
-      },
-    ]
+    },
+]
 
-const findTheOldest = function(people) {
+const findTheOldest = function (people) {
     let agedPeeps = people.map((person) => ({
         name: person.name,
         age: (person.yearOfDeath ?? new Date().getFullYear()) - (person.yearOfBirth),
     }))
-    .sort((a, b) => b.age - a.age);
+        .sort((a, b) => b.age - a.age);
     return agedPeeps[0];
 };
 
 console.log(findTheOldest(people));
+
+const fibonacci = function (num) {
+    if (num < 0) {
+        return "OOPS"
+    };
+
+    let fibArray = [0, 1];
+    for (let i = 2; i <= num; i++) {
+        fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+    }
+    return fibArray[num];
+};
+console.log(fibonacci(4)); //3
+console.log(fibonacci(15)); //610
+console.log(fibonacci(0)); //0
+console.log(fibonacci(-25)); //"OOPS"
+console.log(fibonacci("4")); //4
